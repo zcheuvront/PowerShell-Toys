@@ -31,12 +31,12 @@ $csv = import-csv $path
 
 Get-Module | ForEach-Object{
     if($_.Name -eq "Azure"){
-		foreach{$username in $csv.username
+		foreach($username in $csv.username){
 			foreach($password in $csv.password){
 				az login -u $username -p $password
 				start-sleep -Seconds 15
 			}
-		}
+        }
 	}
     else{
 		Get-InstalledModule | foreach-Object{
