@@ -3,8 +3,9 @@
 # This is very basic and doesn't take into account evasion tactics
 
 # CSV should look as follows:
-# |	username    | 	password.   |
+# |	username    | 	password    |
 # |	exampleuser |	LetMeIn123! |
+# |     sampleuser2 |   pwordguess  |
 
 # Needs to be run from elevated Powershell prompt
 # Example Usage: > AzurePasswordGuesser.ps1 -path C:\users\public\creds.csv
