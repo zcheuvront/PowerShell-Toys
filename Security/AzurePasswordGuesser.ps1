@@ -38,6 +38,12 @@ Get-Module | ForEach-Object{
 		}
 	}
     else{
-        Write-Host -f Red "The Azure PowerShell module is missing. Please install with 'install-module azure'"
+		Get-InstalledModule | foreach-Object{
+			if($_.Name -eq "Azure") { Import-Module Azure | Out-Null }
+			start-sleep -second 5
+		}
+		else{
+			Write-Host -f Red "The Azure PowerShell module is missing. Please install with 'install-module azure'"
+		}
     }
 }
