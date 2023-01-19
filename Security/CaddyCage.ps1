@@ -51,34 +51,38 @@ do
     $selection = Read-Host "Please make a selection"
     switch ($selection)
     {
-		'1' 
-		{
-			if($flag1)
-			{
-				Write-Host -F Red "ERROR: Dummy filesystem has already been created in $pwd\Q"
-			}
-			elseif (!$flag1)
-			{
-				EnvironmentSetup
-				$flag1 = $true
-			}
-		} 
-		'2' 
-		{
-			'You chose option #2'
-		} 
-		'3' 
-		{
-			'You chose option #3'
-		}
-		'4'
-		{
+      '1' 
+      {
+        if($flag1)
+        {
+          Write-Host -F Red "ERROR: Dummy filesystem has already been created in $pwd\Q"
+        }
+        elseif (!$flag1)
+        {
+          EnvironmentSetup
+          $flag1 = $true
+        }
+      } 
 
-		}
-		'5'
-		{
-			Remove-Variable * -ErrorAction SilentlyContinue
-		}
+      '2' 
+      {
+        'You chose option #2'
+      } 
+
+      '3' 
+      {
+        'You chose option #3'
+      }
+
+      '4'
+      {
+
+      }
+
+      '5'
+      {
+        Remove-Variable * -ErrorAction SilentlyContinue
+      }
     }
     pause
 }
@@ -89,7 +93,7 @@ until ($selection -eq 'q')
 # 	[x] create mock file structure
 # 	[] Populate with files with random size of $Ipsum string (1-2880)
 # 	[] Create recursive adversary ability
-# 	[] overwrite dummy files with matching size in null bytes (NullFile function)
+# 	[x] overwrite dummy files with matching size in null bytes (NullFile function)
 # 	[] 
 #
 #	Stretch goal: spawn mapped webdav server to emulate network-facet of attack
