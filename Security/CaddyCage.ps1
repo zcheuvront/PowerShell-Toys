@@ -22,8 +22,8 @@ function Show-Menu($flag1, $flag2, $flag3, $flag4, $flag5)
     Write-Host -F yellow "1: Press '1' to create the dummy filesystem"
     Write-Host -F yellow "2: Press '2' to populate filesystem with dummy files"
     Write-Host -F yellow "3: Press '3' to arm the malware"
-	Write-Host -F yellow "4: Press '4' to execute"
-	Write-Host -F yellow "5: Press '5' to cleanup"
+    Write-Host -F yellow "4: Press '4' to execute"
+    Write-Host -F yellow "5: Press '5' to cleanup"
     Write-Host -F yellow "Q: Press 'Q' to quit."
 }
 
