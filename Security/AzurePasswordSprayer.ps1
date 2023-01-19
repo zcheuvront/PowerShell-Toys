@@ -13,19 +13,7 @@
 
 [cmdLetBinding()]
 param(
-        [ValidateScript({
-            if(-Not ($_ | Test-Path) ){
-                throw "File or folder does not exist"
-            }
-            if(-Not ($_ | Test-Path -PathType Leaf) ){
-                throw "The Path argument must be a file. Folder paths are not allowed."
-            }
-            if($_ -notmatch "(\.csv)"){
-                throw "The file specified in the path argument must be a CSV"
-            }
-            return $true 
-        })]
-        [System.IO.FileInfo]$path
+    $path
 )
 $csv = import-csv $path
 
